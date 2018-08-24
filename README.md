@@ -1,2 +1,6 @@
 # Noun_extraction
 mecabを使い名詞を抽出するプログラムです
+ローカルのmecab.exeを使うので各自インストールしてください
+3行目のpassを変更し使ってください
+input:文章
+output:名詞
