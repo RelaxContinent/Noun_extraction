@@ -1,0 +1,2 @@
+# Noun_extraction
+mecabを使い名詞を抽出するプログラムです
