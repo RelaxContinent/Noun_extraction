@@ -1,6 +1,6 @@
 import subprocess as sp
 import sys
-sys.path.append("mecabのパス")
+sys.path.append("c:/users/tiger/appdata/local/programs/python/python36-32/lib/site-packages")
 
 
 def mymecab(str):
@@ -11,12 +11,18 @@ def mymecab(str):
     return(a.stdout.read().decode("sjis"))
 
 def writing_data():
+    word_list={}
     str=input()
     separate_topic=mymecab(str).split("\n")
     for i in separate_topic:
         if(i!='  '):
             if (i.split("\t")[1].split(",")[1] == "一般"):
                 if(i.split("\t")[1].split(",")[0]=="名詞"):
-                    print(i.split("\t")[0])
+                    if(i.split("\t")[0] in word_list):
+                        word_list[i.split("\t")[0]] += 1
+                    else:
+                        word_list[i.split("\t")[0]]=1
+                    #print(i.split("\t")[0])
+    return word_list
 while(True):
-    writing_data()
+    print(writing_data())
